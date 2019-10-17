@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-profile-form',
@@ -33,5 +34,14 @@ export class ProfileFormComponent implements OnInit {
     console.warn('Last Name:'+this.userProfileForm.get('lastName').value);
     console.log('Nested Form Element Address 1: '+ this.userProfileForm.get(['address','address1']).value);
     console.log('Nested Form Element Address 2: '+ this.userProfileForm.get('address').get('address2').value);
+  }
+
+  updateModelPartially() {
+    this.userProfileForm.patchValue({
+      firstName: 'Neev',
+      address: {
+        address1: 'Camden Addison'
+      }
+    });
   }
 }

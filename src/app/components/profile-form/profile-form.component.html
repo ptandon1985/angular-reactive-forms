@@ -1,46 +1,49 @@
 <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
     <br/>
     <label>
-        First Name:
+        First Name:<br/>
         <input type="text" formControlName="firstName">
     </label>
     <br/>
     <label>
-        Last Name:
+        Last Name:<br/>
         <input type="text" formControlName="lastName">
     </label>
     <br/>
     <label>
-        Age:
+        Age:<br/>
         <input type="text" formControlName="age">
     </label>
     <br/>
     <label>
-        Email:
+        Email:<br/>
         <input type="text" formControlName="email">
     </label>
     <br/>
     <div formGroupName="address">
+        <br/>
+        Address<br/>
         <label>
-            Address 1:
+            Address 1:<br/>
             <input type="text" formControlName="address1">
         </label>
         <br/>
         <label>
-            Address 2:
+            Address 2:<br/>
             <input type="text" formControlName="address2">
         </label>
         <br/>
         <label>
-            State:
+            State:<br/>
             <input type="text" formControlName="state">
         </label>
         <br/>
         <label>
-            Zip Code:
+            Zip Code:<br/>
             <input type="text" formControlName="zip">
         </label>
         <br/>
-    </div>
+    </div><br/>
     <button type="submit" [disabled]="!userProfileForm.valid"> Submit</button>
+    <p><button (click)="updateModelPartially()">Update Partially</button></p>
 </form>
