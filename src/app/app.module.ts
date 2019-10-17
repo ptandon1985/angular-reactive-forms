@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EmailComponent } from './components/email/email.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
+import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProfileFormComponent } from './components/profile-form/profile-form.com
     AppComponent,
     EmailComponent,
     HeaderComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,
