@@ -13,7 +13,14 @@ export class ProfileFormComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl(''),
     age: new FormControl(''),
-    email: new FormControl('')
+    email: new FormControl(''),
+    // Nested Form FormGroup
+      address: new FormGroup({
+        address1: new FormControl('', Validators.required),
+        address2: new FormControl(''),
+        state: new FormControl(''),
+        zip: new FormControl('')
+      })
   });
   constructor() { }
 
@@ -24,6 +31,7 @@ export class ProfileFormComponent implements OnInit {
     console.log(this.userProfileForm.value);
     console.warn('First Name:'+this.userProfileForm.controls['firstName'].value);
     console.warn('Last Name:'+this.userProfileForm.get('lastName').value);
-
+    console.log('Nested Form Element Address 1: '+ this.userProfileForm.get(['address','address1']).value);
+    console.log('Nested Form Element Address 2: '+ this.userProfileForm.get('address').get('address2').value);
   }
 }
